@@ -80,6 +80,14 @@
               </button>
             </div>
 
+            <div class="row">
+              <div class="col-3">
+                <app-flight-card [flight]="f" *ngFor="let f of flights">
+                </app-flight-card>
+              </div>
+            </div>
+
+            <!--
             <div class="table-responsive">
               <table class="table table-striped">
                 <thead>
@@ -113,6 +121,7 @@
                 </tbody>
               </table>
             </div>
+            -->
           </div>
         </div>
 
