@@ -2,6 +2,9 @@
   <div class="card-body">
     <h5 class="card-title">From {{flight.from}} to {{flight.to}}</h5>
     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p class="card-text">Example.</p>
+    <p class="card-text">isSelceted: {{selected}}.</p>
+    <a href="#" (click)="toggleSelect()">
+      <button type="button" class="btn btn-success">Select</button>
+    </a>
   </div>
 </div>

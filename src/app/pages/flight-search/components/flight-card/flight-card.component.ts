@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Flight} from '../../../../core/api/models/flight';
 
 @Component({
@@ -10,13 +10,10 @@ export class FlightCardComponent implements OnInit {
 
   @Input() flight: Flight;
   @Input() selected: boolean;
+  @Output() selectedChange: EventEmitter<string> = new EventEmitter();
 
-  select() {
-    this.selected = true;
-  }
-
-  deselect() {
-    this.selected = false;
+  toggleSelect() {
+    this.selectedChange.emit(this.flight.id);
   }
 
   constructor() {
