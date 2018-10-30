@@ -1,6 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, QueryList, ViewChildren} from '@angular/core';
 import {Flight} from '../../core/api/models/flight';
 import {FlightResource} from '../../core/api/resources/flight.resource';
+import {FlightCardComponent} from './components/flight-card/flight-card.component';
 
 @Component({
   selector: 'app-flight-search',
@@ -15,9 +16,19 @@ export class FlightSearchComponent {
 
   fr: FlightResource;
 
+  @ViewChildren(FlightCardComponent)
+  flightCardList: QueryList<FlightCardComponent>;
+
   constructor(fr: FlightResource) {
     this.fr = fr;
     this.searchFlights('', '');
+  }
+
+  toggleAll() {
+    this.flightCardList
+      .toArray()
+      .forEach((flight) => flight.toggleSelect()
+      )
   }
 
   searchFlights(f, t) {
