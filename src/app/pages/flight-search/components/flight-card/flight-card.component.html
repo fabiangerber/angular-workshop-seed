@@ -1,9 +1,7 @@
 <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">From {{flight.from}} to {{flight.to}}</h5>
-    <p class="card-text">isSelected: {{selected}}.</p>
-    <a href="#" (click)="toggleSelect()">
-      <button type="button" class="btn btn-success">Select</button>
-    </a>
+    <p class="card-text">isSelected: {{selected}}</p>
+    <button type="button" class="btn btn-success" (click)="toggleSelect()">Select</button>
   </div>
 </div>
