@@ -116,7 +116,7 @@
             </div>
             -->
               <div class="row">
-                <app-flight-card [flight]="f" (selectedChange)="selectFlight($event)" *ngFor="let f of flights">
+                <app-flight-card [selected]="selectedFlightIds[f.id]" [flight]="f" (selectedChange)="selectFlight($event)" *ngFor="let f of flights">
                   <div class="col-3"></div>
                 </app-flight-card>
               </div>
