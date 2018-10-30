@@ -1,3 +1,11 @@
-<p>
-  flight-basket works!
-</p>
+<h3 class="card-title">Basket</h3>
+<h6 class="card-subtitle mb-2 text-muted">List of selected flights</h6>
+
+<ul class="todo-list mt-2">
+  <li class="todo-list-item">
+    Flights:
+    <pre>{{selectedFlightIds | json}}</pre>
+  </li>
+</ul>
+
+<ng-content></ng-content>
