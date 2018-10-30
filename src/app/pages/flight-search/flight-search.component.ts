@@ -33,4 +33,8 @@ export class FlightSearchComponent {
     this.selectedFlightIds[id] = !this.selectedFlightIds[id];
   }
 
+  clearBasket() {
+    this.selectedFlightIds = {};
+  }
+
 }

@@ -27,9 +27,11 @@
             </ul>
 
             <div class="card-footer todo-list-footer">
-              <button class="btn btn-danger btn-md" id="btn-todo">
-                <em class="fa fa-2x fa-trash"></em>
-              </button>
+              <a href="#" (click)="clearBasket()">
+                <button class="btn btn-danger btn-md" id="btn-todo">
+                  <em class="fa fa-2x fa-trash"></em>
+                </button>
+              </a>
             </div>
           </div>
         </div>
@@ -103,7 +105,6 @@
                   <td>{{flight.date | date: 'dd-MM-yyyy'}}</td>
 
                   <td>
-
                       <a href="#" (click)="selectFlight(flight.id)">
                         <button type="button" class="btn btn-success">Select</button>
                       </a>
