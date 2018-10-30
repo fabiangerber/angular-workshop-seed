@@ -8,6 +8,7 @@ import {FlightSearchComponent} from './pages/flight-search/flight-search.compone
 import {HomeComponent} from './pages/home/home.component';
 import {SharedModule} from './shared/shared.module';
 import { FlightCardComponent } from './pages/flight-search/components/flight-card/flight-card.component';
+import { FlightBasketComponent } from './pages/flight-search/components/flight-basket/flight-basket.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { FlightCardComponent } from './pages/flight-search/components/flight-car
     AppComponent,
     HomeComponent,
     FlightSearchComponent,
-    FlightCardComponent
+    FlightCardComponent,
+    FlightBasketComponent
   ],
   exports: [
     // Modules
