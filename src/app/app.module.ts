@@ -26,12 +26,16 @@ const APP_ROUTES: Routes = [
     children: [
       {
         path: '',
-        component: FlightSearchComponent,
+        redirectTo:  'flight-search',
         pathMatch: 'full'
       },
       {
         path: 'flight-search',
         component: FlightSearchComponent
+      },
+      {
+        path: 'flight-search/flight-edit/:id',
+        component: FlightEditComponent
       },
       {
         path: 'home',
