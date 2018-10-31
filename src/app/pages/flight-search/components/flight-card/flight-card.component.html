@@ -2,9 +2,8 @@
   <div class="card-body">
     <h5 class="card-title">From {{flight.from}} to {{flight.to}}</h5>
     <p class="card-text">isSelected: {{selected}}</p>
-    <button type="button" (click)="toggleSelect()" class="btn btn-success">Select</button>
-    <a [routerLink]="['/flight-edit', flight.id]">
-      <button type="button" class="btn btn-info">Edit</button>
-    </a>
+    <button type="button" (click)="toggleSelect()" *ngIf="!selected" class="btn btn-success">Select</button>
+    <button type="button" (click)="toggleSelect()" *ngIf="selected" class="btn btn-danger">Remove</button>
+    <button [routerLink]="['/flight-edit', flight.id]" type="button" class="btn btn-info">Edit</button>
   </div>
 </div>
