@@ -12,6 +12,7 @@ import { FlightBasketComponent } from './pages/flight-search/components/flight-b
 import {RouterModule, Routes} from '@angular/router';
 import { Error404Component } from './pages/error404/error404.component';
 import { FlightEditComponent } from './pages/flight-edit/flight-edit.component';
+import { FlightBookingComponent } from './pages/flight-booking/flight-booking.component';
 
 const APP_ROUTES: Routes = [
   {
@@ -20,16 +21,31 @@ const APP_ROUTES: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'flight-booking',
+    component: FlightBookingComponent,
+    children: [
+      {
+        path: '',
+        component: FlightSearchComponent,
+        pathMatch: 'full'
+      },
+      {
+        path: 'flight-search',
+        component: FlightSearchComponent
+      },
+      {
+        path: 'home',
+        component: HomeComponent
+      },
+      {
+        path: '**',
+        component: Error404Component
+      }
+      ]
+  },
+  {
     path: 'home',
     component: HomeComponent
-  },
-  {
-    path: 'flight-search',
-    component: FlightSearchComponent
-  },
-  {
-    path: 'flight-edit/:id',
-    component: FlightEditComponent
   },
   {
     path: 'error404',
@@ -53,7 +69,8 @@ export const AppRoutesModule = RouterModule.forRoot(APP_ROUTES);
     FlightCardComponent,
     FlightBasketComponent,
     Error404Component,
-    FlightEditComponent
+    FlightEditComponent,
+    FlightBookingComponent
   ],
   exports: [
     // Modules
