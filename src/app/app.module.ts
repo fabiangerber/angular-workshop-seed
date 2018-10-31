@@ -9,7 +9,7 @@ import {HomeComponent} from './pages/home/home.component';
 import {SharedModule} from './shared/shared.module';
 import { FlightCardComponent } from './pages/flight-search/components/flight-card/flight-card.component';
 import { FlightBasketComponent } from './pages/flight-search/components/flight-basket/flight-basket.component';
-import {RouterModule, Routes} from '@angular/router';
+import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import { Error404Component } from './pages/error404/error404.component';
 import { FlightEditComponent } from './pages/flight-edit/flight-edit.component';
 import { FlightBookingComponent } from './pages/flight-booking/flight-booking.component';
@@ -60,7 +60,11 @@ const APP_ROUTES: Routes = [
     redirectTo: 'error404'
   },
 ];
-export const AppRoutesModule = RouterModule.forRoot(APP_ROUTES);
+export const AppRoutesModule = RouterModule.forRoot(APP_ROUTES,
+  {
+    preloadingStrategy: PreloadAllModules
+  }
+  );
 
 @NgModule({
   declarations: [
